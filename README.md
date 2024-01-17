@@ -15,6 +15,12 @@
 | **Client** | Twyst Cocktail |
 | **Business Contact** | Najee Wooten |
 
+## Introduction
+
+![wide-smpl-default](https://github.com/KShervington/beverage-calculator/assets/54691558/e645c976-5951-4875-81a8-f260b1e9d495)
+
+Although this tool was originally created for the mentioned client, it is free to use, or to be forked, for any other application. If used elsewhere, please attribute appropriately with a link to this repository.
+
 | Constants | Description |
 |---|---|
 | `AVG_DRINKS_PER_HOUR` | Average amount of drinks a single guest will have each hour |
@@ -27,6 +33,10 @@
 | `ALCFREE_SERVING_PER_BOTTLE` | # of servings from a single 2 L mixer bottle |
 
 ## Simple View
+
+| Default | After Calculation |
+|---|---|
+| ![smpl-default](https://github.com/KShervington/beverage-calculator/assets/54691558/40563e3d-e6f4-4f4f-97b4-b3852d3f3908) | ![smpl-values](https://github.com/KShervington/beverage-calculator/assets/54691558/f30d0aec-3e9f-4e6b-89b2-18d45e5f39c7) |
 
 | Inputs | Description |
 |---|---|
@@ -114,6 +124,10 @@ alcFreeCount = Math.ceil((parseFloat(totalDrinks * STD_ALCFREE_PREF) / ALCFREE_S
 > Alcohol-free drinks have to be used for both cocktails and for guests who will only drink alcohol-free beverages. Hence the above calculations.
 
 ## Advanced View
+
+| Default | After Calculation |
+|---|---|
+| ![adv-default](https://github.com/KShervington/beverage-calculator/assets/54691558/2794f6a2-f189-4e1b-aeb9-fecc16483597) | ![adv-values](https://github.com/KShervington/beverage-calculator/assets/54691558/d9d736c2-49c6-47af-8f1f-d688e29bad0f) |
 
 | Inputs | Description |
 |---|---|
