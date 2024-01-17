@@ -35,13 +35,76 @@
 | `alcFreeCount` | # of 2 L bottles of mixer (likely soda) needed |
 
 ### Output Calculations
+
+Variable values for following examples
+```javascript
+const STD_WINE_PREF = 0.35;
+const STD_BEER_PREF = 0.2;
+const STD_SPIRIT_PREF = 0.35;
+const STD_ALCFREE_PREF = 0.1;
+
+const SPIRIT_SERVING_PER_BOTTLE = 16.0;
+const WINE_SERVING_PER_BOTTLE = 5.0;
+const ALCFREE_SERVING_PER_BOTTLE = 8.0;
+
+let totalDrinks = 100;
+```
+
 ```javascript
 numTotalDrinks = Math.ceil(AVG_DRINKS_PER_HOUR * eventDuration) * guestCount;
 ```
+
 ```javascript
 wineCount = Math.ceil(parseFloat(totalDrinks * STD_WINE_PREF) / WINE_SERVING_PER_BOTTLE);
+
+// ex.
+// wineCount = (100 * 0.35) / 5
+// wineCount = 7
 ```
 
+```javascript
+beerCount = Math.ceil(parseFloat(totalDrinks * STD_BEER_PREF));
+
+// ex.
+// beerCount = 100 * 0.2
+// beerCount = 20
+```
+
+```javascript
+spiritCount = Math.ceil(parseFloat(totalDrinks * STD_SPIRIT_PREF) / SPIRIT_SERVING_PER_BOTTLE);
+
+// ex.
+// spiritCount = (100 * 0.35) / 16
+// spiritCount = 2.1875
+// spiritCount = 3 --Rounded up
+```
+
+```javascript
+bottlesOfSpirit = Math.ceil(parseFloat(totalDrinks * STD_SPIRIT_PREF) / SPIRIT_SERVING_PER_BOTTLE);
+
+// Calculate # of bottles to be used as mixers, assuming 1:3 (spirit:mixer) ratio for cocktails
+// ** 750 mL per spirit bottle; 2000 mL per mixer bottle **
+mixerBottles = Math.ceil(((bottlesOfSpirit * 750.0) * 3.0) / 2000.0);
+
+alcFreeCount = Math.ceil((parseFloat(totalDrinks * STD_ALCFREE_PREF) / ALCFREE_SERVING_PER_BOTTLE)) + mixerBottles;
+
+// ex.
+// bottlesOfSpirit = (100 * 0.35) / 16
+// bottlesOfSpirit = 2.1875
+// bottlesOfSpirit = 3 --Rounded up
+
+// mixerBottles = ((3 * 750) * 3) / 2000
+// mixerBottles = (2250 * 3) / 2000
+// mixerBottles = 3.375
+// mixerBottles = 4 --Rounded up
+
+// alcFreeCount = ((100 * 0.1) / 8) + 4
+// alcFreeCount = (10 / 8) + 4
+// alcFreeCount = 1.25 + 4
+// alcFreeCount = 2 + 4 --Rounded up
+// alcFreeCount = 6
+```
+> Alcohol-free drinks have to be used for both cocktails and for guests who will only drink alcohol-free beverages. Hence the above calculations.
 
 ## Advanced View
 
