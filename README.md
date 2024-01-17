@@ -1,6 +1,13 @@
 # Beverage Calculator
 
-**Created by**: Kyle Shervington
+**Devloped by**: Kyle Shervington
+
+> ## Developer's Note:
+> 
+> This tool was integrated into the client's Squarespace website as a code block.
+> That is reason all the styling, HTML, and Javascript are in one file.
+> That being said, this drink calculator will still be fully functional when launched
+> independently, though it will look different than it does on the client's website.
 
 |  |  |
 |---|---|
@@ -126,15 +133,3 @@ alcFreeCount = Math.ceil((parseFloat(totalDrinks * STD_ALCFREE_PREF) / ALCFREE_S
 | `beerCount` | # of 12 oz. cans of beer needed |
 | `spiritCount` | # of 750 mL bottles of spirit/liquor needed |
 | `alcFreeCount` | # of 2 L bottles of mixer (likely soda) needed |
-
-| Value | Formula |
-|---|---|
-| Total Drinks | 1.5 * total_drinks |
-| Business Contact | Najee Wooten |
-
-> ## Creator's Note:
-> 
-> This tool was integrated into the client's Squarespace website as a code block.
-> That is reason all the styling, HTML, and Javascript are in one file.
-> That being said, this drink calculator will still be fully functional when launched
-> independently, though it will look different than it does on the client's website.
