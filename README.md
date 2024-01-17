@@ -21,6 +21,8 @@
 
 Although this tool was originally created for the mentioned client, it is free to use, or to be forked, for any other application. If used elsewhere, please attribute appropriately with a link to this repository.
 
+<a id="constants-table"></a>
+
 | Constants | Description |
 |---|---|
 | `AVG_DRINKS_PER_HOUR` | Average amount of drinks a single guest will have each hour |
@@ -53,7 +55,8 @@ Although this tool was originally created for the mentioned client, it is free t
 
 ### Output Calculations
 
-Variable values for following examples
+**Variable values for following examples**:
+
 ```javascript
 const STD_WINE_PREF = 0.35;
 const STD_BEER_PREF = 0.2;
@@ -66,6 +69,8 @@ const ALCFREE_SERVING_PER_BOTTLE = 8.0;
 
 let totalDrinks = 100;
 ```
+
+**Examples**:
 
 ```javascript
 numTotalDrinks = Math.ceil(AVG_DRINKS_PER_HOUR * eventDuration) * guestCount;
@@ -147,3 +152,7 @@ alcFreeCount = Math.ceil((parseFloat(totalDrinks * STD_ALCFREE_PREF) / ALCFREE_S
 | `beerCount` | # of 12 oz. cans of beer needed |
 | `spiritCount` | # of 750 mL bottles of spirit/liquor needed |
 | `alcFreeCount` | # of 2 L bottles of mixer (likely soda) needed |
+
+### Output Calculations
+
+The major difference, in the advanced view, is that it uses user-inputted percentages to calculate guest drink preference rather than the standard preference percentages shown in the [Constants Table](#constants-table) above.
