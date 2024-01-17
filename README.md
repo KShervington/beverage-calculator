@@ -47,7 +47,7 @@ Although this tool was originally created for the mentioned client, it is free t
 
 | Outputs | Description |
 |---|---|
-| `numTotalDrinks` | Total # of drinks to be served at the event |
+| `totalDrinks` | Total # of drinks to be served at the event |
 | `wineCount` | # of 750 mL bottles of wine needed |
 | `beerCount` | # of 12 oz. cans of beer needed |
 | `spiritCount` | # of 750 mL bottles of spirit/liquor needed |
@@ -58,6 +58,8 @@ Although this tool was originally created for the mentioned client, it is free t
 **Variable values for following examples**:
 
 ```javascript
+const AVG_DRINKS_PER_HOUR = 1.5;
+
 const STD_WINE_PREF = 0.35;
 const STD_BEER_PREF = 0.2;
 const STD_SPIRIT_PREF = 0.35;
@@ -67,13 +69,20 @@ const SPIRIT_SERVING_PER_BOTTLE = 16.0;
 const WINE_SERVING_PER_BOTTLE = 5.0;
 const ALCFREE_SERVING_PER_BOTTLE = 8.0;
 
-let totalDrinks = 100;
+let eventDuration = 1;
+let guestCount = 50;
 ```
 
 **Examples**:
 
 ```javascript
-numTotalDrinks = Math.ceil(AVG_DRINKS_PER_HOUR * eventDuration) * guestCount;
+totalDrinks = Math.ceil(AVG_DRINKS_PER_HOUR * eventDuration) * guestCount;
+
+// ex.
+// totalDrinks = (1.5 * 1) * 50
+// totalDrinks = 1.5 * 50
+// totalDrinks = 2 * 50 --Rounded up
+// totalDrinks = 100
 ```
 
 ```javascript
@@ -147,7 +156,7 @@ alcFreeCount = Math.ceil((parseFloat(totalDrinks * STD_ALCFREE_PREF) / ALCFREE_S
 
 | Outputs | Description |
 |---|---|
-| `numTotalDrinks` | Total # of drinks to be served at the event |
+| `totalDrinks` | Total # of drinks to be served at the event |
 | `wineCount` | # of 750 mL bottles of wine needed |
 | `beerCount` | # of 12 oz. cans of beer needed |
 | `spiritCount` | # of 750 mL bottles of spirit/liquor needed |
